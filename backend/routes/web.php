@@ -1,7 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ConsentementController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::apiResource('users', UserController::class);
+Route::apiResource('consentements', ConsentementController::class);
+Route::apiResource('consentements', ConsentementController::class)
+    ->only(['store', 'show', 'update', 'destroy']);
